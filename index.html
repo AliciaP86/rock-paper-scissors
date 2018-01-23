@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+<script>
+function randomNum() {
+return Math.floor(Math.random() *2);
+}
+
+function computerPlay() {
+if (randomNum() === 0) {
+return "rock";}
+else if (randomNum() === 1) {
+return "paper";}
+else {return "scissors";}
+}
+
+computerSelection = computerPlay();
+
+function playRound(playerSelection, computerSelection) {
+if ((playerSelection == "rock" && computerSelection=="paper") || 
+(playerSelection=="paper" && computerSelection=="scissors") ||
+(playerSelection=="scissors" && computerSelection=="rock")) {
+return "You lose. " + computerSelection + " beats " + playerSelection + ".";
+}
+else if ((playerSelection=="rock" && computerSelection=="scissors") || 
+(playerSelection=="paper" && computerSelection=="rock") || 
+(playerSelection=="scissors" && computerSelection=="paper")) {
+return "You win! " + playerSelection + " beats " + computerSelection + ".";
+}
+else if (playerSelection == computerSelection) {
+return "Tied. Try again.";
+}
+}
+
+
+
+
+</script>
+</body>
