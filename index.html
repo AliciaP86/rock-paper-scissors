@@ -18,8 +18,11 @@ function computerPlay() {
 
 function playerPlay() {
   let question = prompt("Rock, paper, or scissors?");
-  return question.toLowerCase();
-  playerPlay();
+  if (question.toLowerCase() == "rock" || question.toLowerCase() == "paper" || question.toLowerCase() == "scissors") {
+    return question.toLowerCase();}
+  else {
+    alert("Not a valid response. Try again.");
+    }
 } 
 
 function playRound(playerSelection, computerSelection) {
@@ -71,15 +74,17 @@ function game(rounds) {
   else if (result == "Tied.") {
     alert("Tied, try again.");
     rounds --;}
+  else if (result === undefined) {
+    rounds --;}
 rounds ++;
 }
-while(rounds < 5)
+while(rounds < 5);
 
   if (computerWins > playerWins) {
-    alert("You won " + playerWins + " times and the computer won " + computerWins + " times. The computer wins this round. Refresh to try again.")
+    alert("You won " + playerWins + " times and the computer won " + computerWins + " times. The computer wins this round. Refresh to try again.");
 }
   else if (playerWins > computerWins) {
-    alert ("You won " + playerWins + " times and the computer won " + computerWins + " times. You win this round. Refresh to try again.")
+    alert ("You won " + playerWins + " times and the computer won " + computerWins + " times. You win this round. Refresh to try again.");
 }
 }
 
